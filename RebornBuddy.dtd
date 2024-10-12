@@ -1,0 +1,2500 @@
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT BehaviorDirectory (#PCDATA)>
+<!ELEMENT Order ANY>
+
+<!ELEMENT CodeChunk EMPTY>
+<!ATTLIST CodeChunk
+    Name CDATA #IMPLIED
+    Type (Statement|Definition|Hook) "Statement"
+    Code CDATA #IMPLIED
+>
+
+<!ELEMENT If ANY>
+<!ATTLIST If
+    Condition CDATA #IMPLIED
+    condition CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT While ANY>
+<!ATTLIST While
+    Condition CDATA #IMPLIED
+    condition CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT Vendor EMPTY>
+<!ATTLIST Vendor
+    mapName CDATA #IMPLIED
+    AllowedVariance CDATA "0"
+    ArrivalTolerance CDATA "1.5"
+    XYZ CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    Radius CDATA #IMPLIED
+    X CDATA #IMPLIED
+    Y CDATA #IMPLIED
+    Z CDATA #IMPLIED
+>
+
+<!ELEMENT GrindArea (Hotspots,TargetMobs)>
+<!ATTLIST GrindArea
+    Name CDATA #IMPLIED
+    name CDATA #IMPLIED
+>
+
+<!ELEMENT Hotspots (Hotspot+)>
+
+<!ELEMENT GrindAreas (GrindArea+)>
+
+<!ELEMENT TargetMob EMPTY>
+<!ATTLIST TargetMob
+    id CDATA #IMPLIED
+    Id CDATA #IMPLIED
+    Weight CDATA "1"
+>
+
+<!ELEMENT TargetMobs (TargetMob+)>
+
+<!ELEMENT AvoidMob EMPTY>
+<!ATTLIST AvoidMob
+    entry CDATA #IMPLIED
+    name CDATA #IMPLIED
+>
+
+<!ELEMENT Profile ANY>
+
+
+<!ELEMENT RunCode EMPTY>
+<!ATTLIST RunCode
+    Name CDATA #IMPLIED
+    name CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT AerialBlackspot EMPTY>
+<!ATTLIST AerialBlackspot
+    Name CDATA #IMPLIED
+    ZoneId CDATA #IMPLIED
+>
+
+<!ATTLIST AerialBlackspot
+    X CDATA #IMPLIED
+    Z CDATA #IMPLIED
+>
+
+<!ELEMENT Hook EMPTY>
+<!ATTLIST Hook
+    Name CDATA #IMPLIED
+    Operation CDATA #IMPLIED
+    Index CDATA "0"
+    Location CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT Hotspot EMPTY>
+<!ATTLIST Hotspot
+    AllowedVariance CDATA "0"
+    ArrivalTolerance CDATA "1.5"
+    XYZ CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    name CDATA #IMPLIED
+    Radius CDATA #IMPLIED
+    X CDATA #IMPLIED
+    Y CDATA #IMPLIED
+    Z CDATA #IMPLIED
+>
+
+<!ELEMENT BlackSpot EMPTY>
+<!ATTLIST BlackSpot
+    XYZ CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    Radius CDATA #IMPLIED
+    X CDATA #IMPLIED
+    Y CDATA #IMPLIED
+    Z CDATA #IMPLIED
+>
+
+<!ELEMENT GatheringSkillOrder EMPTY>
+<!ATTLIST GatheringSkillOrder
+    AllOrNone (True|False|true|false) "False"
+>
+
+
+<!ELEMENT Gather EMPTY>
+<!ATTLIST Gather
+    while CDATA #IMPLIED
+    InteractDistance CDATA "3"
+    Loops CDATA "-1"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT GrindSafe EMPTY>
+<!ATTLIST GrindSafe
+    grindRef CDATA #IMPLIED
+    While CDATA #IMPLIED
+    while CDATA #IMPLIED
+    Distance CDATA "5"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT Grind EMPTY>
+<!ATTLIST Grind
+    GrindRef CDATA #IMPLIED
+    grindRef CDATA #IMPLIED
+    While CDATA #IMPLIED
+    while CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT Desynth EMPTY>
+<!ATTLIST Desynth
+    ItemIds CDATA #IMPLIED
+    BagIds CDATA #IMPLIED
+    DesynthDelay CDATA "6000"
+    DesynthTimeout CDATA "10"
+    ConsecutiveDesynthTimeoutLimit CDATA "3"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT StopCrafting EMPTY>
+<!ATTLIST StopCrafting
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT CraftAction EMPTY>
+<!ATTLIST CraftAction
+    ActionId CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    MinDelay CDATA "250"
+    MaxDelay CDATA "500"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT EatFood EMPTY>
+<!ATTLIST EatFood
+    ItemId CDATA #IMPLIED
+    MinDuration CDATA "5"
+    HqOnly (True|False|true|false) #IMPLIED
+    NqOnly (True|False|true|false) #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT NoCombatMoveTo EMPTY>
+<!ATTLIST NoCombatMoveTo
+    XYZ CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    Distance CDATA "3"
+    distance CDATA "3"
+    UseMesh (True|False|true|false) "True"
+    Wait CDATA "5000"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT FollowNPC EMPTY>
+<!ATTLIST FollowNPC
+    Condition CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    Randomness CDATA "1.5"
+    Distance CDATA "3"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT SelectStringOverride EMPTY>
+<!ATTLIST SelectStringOverride
+    Index CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT MoveTo EMPTY>
+<!ATTLIST MoveTo
+    XYZ CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    Distance CDATA "3"
+    distance CDATA "3"
+    UseMesh (True|False|true|false) "True"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT TeleportTo EMPTY>
+<!ATTLIST TeleportTo
+    ZoneId CDATA "0"
+    AetheryteId CDATA "0"
+    Name CDATA #IMPLIED
+    Force (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT EnablePlugin EMPTY>
+<!ATTLIST EnablePlugin
+    Names CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT TurnIn EMPTY>
+<!ATTLIST TurnIn
+    RewardSlot CDATA "-1"
+    ItemIds CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    RequiresHq CDATA #IMPLIED
+    UseHQifNoNQ (True|False|true|false) "True"
+    NpcId CDATA #IMPLIED
+    InteractDistance CDATA "5"
+    XYZ CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT DisablePlugin EMPTY>
+<!ATTLIST DisablePlugin
+    Names CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT FlyTo EMPTY>
+<!ATTLIST FlyTo
+    XYZ CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    AllowedVariance CDATA "7"
+    ArrivalTolerance CDATA "1.5"
+    MinHeight CDATA "0"
+    Land (True|False|true|false) "False"
+    Dismount (True|False|true|false) "False"
+    IgnoreIndoors (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT GetTo EMPTY>
+<!ATTLIST GetTo
+    XYZ CDATA #IMPLIED
+    ZoneId CDATA #IMPLIED
+    Wait CDATA "5000"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT Synthesize EMPTY>
+<!ATTLIST Synthesize
+    MinimumCp CDATA #IMPLIED
+    RecipeId CDATA #IMPLIED
+    UseCR (True|False|true|false) #IMPLIED
+    RequiredSkills CDATA #IMPLIED
+    HQMats CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT BuyItem EMPTY>
+<!ATTLIST BuyItem
+    ItemIds CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    ItemCounts CDATA #IMPLIED
+    ItemCount CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    InteractDistance CDATA "5"
+    DialogOption CDATA "-1"
+    XYZ CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT HandOver EMPTY>
+<!ATTLIST HandOver
+    ItemIds CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    RequiresHq CDATA #IMPLIED
+    UseHQifNoNQ (True|False|true|false) "True"
+    NpcId CDATA #IMPLIED
+    InteractDistance CDATA "5"
+    XYZ CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT WaitWhile EMPTY>
+<!ATTLIST WaitWhile
+    Condition CDATA #IMPLIED
+    condition CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT WaitTimer EMPTY>
+<!ATTLIST WaitTimer
+    WaitTime CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT Dismount EMPTY>
+<!ATTLIST Dismount
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT Performance EMPTY>
+<!ATTLIST Performance
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT RegisterDailies EMPTY>
+<!ATTLIST RegisterDailies
+    QuestIds CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT MoveToSafe EMPTY>
+<!ATTLIST MoveToSafe
+    XYZ CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    Radius CDATA "5"
+    Distance CDATA "3"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT SimpleDuty ANY>
+<!ATTLIST SimpleDuty
+    XYZ CDATA #IMPLIED
+    InteractDistance CDATA "3"
+    InteractNpcId CDATA #IMPLIED
+    IgnoreNpcIds CDATA #IMPLIED
+    GuardianNPCId CDATA #IMPLIED
+    LeashDistance CDATA "20"
+    SearchDistance CDATA "30"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT BotSettings EMPTY>
+<!ATTLIST BotSettings
+    AutoEquip CDATA "-1"
+    BlockSkippingCutscenes CDATA "-1"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT PickupDailyQuest EMPTY>
+<!ATTLIST PickupDailyQuest
+    InteractDistance CDATA "5"
+    NpcId CDATA #IMPLIED
+    SelectStringSlot CDATA "0"
+    XYZ CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+        <!ELEMENT PickUpQuest EMPTY>
+        <!ATTLIST PickUpQuest
+                InteractDistance CDATA "5"
+                NpcId CDATA #IMPLIED
+                SelectStringSlot CDATA "0"
+                XYZ CDATA #IMPLIED
+                inCombat (True|False|true|false) "False"
+                InCombat (True|False|true|false) "False"
+                QuestId CDATA #IMPLIED
+                Step CDATA #IMPLIED
+                StepId CDATA #IMPLIED
+                PostCombatDelay CDATA "0"
+                >
+
+        <!ELEMENT PickupQuest EMPTY>
+        <!ATTLIST PickupQuest
+                InteractDistance CDATA "5"
+                NpcId CDATA #IMPLIED
+                SelectStringSlot CDATA "0"
+                XYZ CDATA #IMPLIED
+                inCombat (True|False|true|false) "False"
+                InCombat (True|False|true|false) "False"
+                QuestId CDATA #IMPLIED
+                Step CDATA #IMPLIED
+                StepId CDATA #IMPLIED
+                PostCombatDelay CDATA "0"
+                >
+
+<!ELEMENT LogMessage EMPTY>
+<!ATTLIST LogMessage
+    Message CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT UseObject EMPTY>
+<!ATTLIST UseObject
+    Condition CDATA #IMPLIED
+    condition CDATA #IMPLIED
+    XYZ CDATA #IMPLIED
+    WaitTime CDATA #IMPLIED
+    UseHealthPercent CDATA "0"
+    LacksAuraId CDATA #IMPLIED
+    BlacklistDuration CDATA "180"
+    UseDistance CDATA "3.24"
+    UseTimes CDATA "0"
+    SearchRadius CDATA "50"
+    Radius CDATA "50"
+    NpcIds CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    IgnoreLOS (True|False|true|false) #IMPLIED
+    BlacklistAfter (True|False|true|false) #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    InCombatOnly (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT Scan EMPTY>
+<!ATTLIST Scan
+    BruseIds CDATA #IMPLIED
+    BruseIds CDATA #IMPLIED
+    NpcIds CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    Groups CDATA #IMPLIED
+    Type CDATA #IMPLIED
+    Radius CDATA #IMPLIED
+    QuestParam CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT Log EMPTY>
+<!ATTLIST Log
+    Message CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    Color CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT UserDialog EMPTY>
+<!ATTLIST UserDialog
+    DialogText CDATA #IMPLIED
+    DialogTitle CDATA "Attention Required..."
+    ExpiryActionName CDATA "InputEnabled_Continue"
+    ExpiryTime CDATA "0"
+    IsBotStopAllowed (True|False|true|false) "True"
+    IsBotContinueAllowed (True|False|true|false) "False"
+    IsStopOnContinue (True|False|true|false) "False"
+    SoundCue CDATA "Asterisk"
+    SoundCueInterval CDATA "60"
+    QuestRequirementComplete (DontCare|Complete|NotComplete) #IMPLIED
+    QuestRequirementInLog (DontCare|InLog|NotInLog|Available) #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT ClimbHill EMPTY>
+<!ATTLIST ClimbHill
+    Start CDATA #IMPLIED
+    End CDATA #IMPLIED
+    Distance CDATA "1"
+    SpamJump (True|False|true|false) "False"
+    ForceDismount (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT UseItem EMPTY>
+<!ATTLIST UseItem
+    ItemId CDATA #IMPLIED
+    Condition CDATA #IMPLIED
+    XYZ CDATA #IMPLIED
+    WaitTime CDATA #IMPLIED
+    UseHealthPercent CDATA "0"
+    LacksAuraId CDATA #IMPLIED
+    BlacklistDuration CDATA "180"
+    UseDistance CDATA "3.24"
+    UseTimes CDATA "0"
+    SearchRadius CDATA "50"
+    Radius CDATA "50"
+    NpcIds CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    IgnoreLOS (True|False|true|false) #IMPLIED
+    BlacklistAfter (True|False|true|false) #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    InCombatOnly (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT TalkTo EMPTY>
+<!ATTLIST TalkTo
+    NpcId CDATA #IMPLIED
+    InteractDistance CDATA "5"
+    BypassTargetChange (True|False|true|false) "False"
+    SSO CDATA "0"
+    SelectStringOverride CDATA "0"
+    XYZ CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT EmoteNPC EMPTY>
+<!ATTLIST EmoteNPC
+    Emote CDATA #IMPLIED
+    Condition CDATA #IMPLIED
+    XYZ CDATA #IMPLIED
+    WaitTime CDATA #IMPLIED
+    UseHealthPercent CDATA "0"
+    LacksAuraId CDATA #IMPLIED
+    BlacklistDuration CDATA "180"
+    UseDistance CDATA "3.24"
+    UseTimes CDATA "0"
+    SearchRadius CDATA "50"
+    Radius CDATA "50"
+    NpcIds CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    IgnoreLOS (True|False|true|false) #IMPLIED
+    BlacklistAfter (True|False|true|false) #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    InCombatOnly (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT UseTransport EMPTY>
+<!ATTLIST UseTransport
+    NpcId CDATA #IMPLIED
+    DialogOption CDATA "-1"
+    InteractDistance CDATA "5"
+    XYZ CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT PerformNote EMPTY>
+<!ATTLIST PerformNote
+    Delay CDATA "250"
+    Note CDATA ""
+>
+
+<!ELEMENT InteractObject EMPTY>
+<!ATTLIST InteractObject
+    Name CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+>
+
+<!ELEMENT CheckPoint EMPTY>
+<!ATTLIST CheckPoint
+    XYZ CDATA #IMPLIED
+>
+
+<!ELEMENT LLSimpleDuty EMPTY>
+<!ATTLIST LLSimpleDuty
+    ItemIds CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    UseItem (True|False|true|false) "False"
+    InteractInCombat (True|False|true|false) "False"
+    XYZ CDATA #IMPLIED
+    InteractDistance CDATA "3"
+    InteractNpcId CDATA #IMPLIED
+    IgnoreNpcIds CDATA #IMPLIED
+    GuardianNPCId CDATA #IMPLIED
+    LeashDistance CDATA "20"
+    SearchDistance CDATA "30"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT PickUpMandervilleQuest EMPTY>
+<!ATTLIST PickUpMandervilleQuest
+    QuestId CDATA #IMPLIED
+    QuestID CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    NpcID CDATA #IMPLIED
+    NPCID CDATA #IMPLIED
+    XYZ CDATA #IMPLIED
+    ZoneId CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LoadServerProfile EMPTY>
+<!ATTLIST LoadServerProfile
+    Path CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLSendChat EMPTY>
+<!ATTLIST LLSendChat
+    NpcId CDATA "0"
+    QuestItem CDATA "0"
+    XYZ CDATA #IMPLIED
+    GearSet CDATA "0"
+    RemoveAura CDATA "0"
+    Say CDATA #IMPLIED
+    Shout CDATA #IMPLIED
+    Emote CDATA #IMPLIED
+    DoAction CDATA #IMPLIED
+    DoActionTarget CDATA #IMPLIED
+    Delay CDATA "1500"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT ALoadProfile EMPTY>
+<!ATTLIST ALoadProfile
+    Path CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+        <!ELEMENT LLoadProfile EMPTY>
+        <!ATTLIST LLoadProfile
+                Path CDATA #IMPLIED
+                inCombat (True|False|true|false) "False"
+                InCombat (True|False|true|false) "False"
+                QuestId CDATA #IMPLIED
+                Step CDATA #IMPLIED
+                StepId CDATA #IMPLIED
+                PostCombatDelay CDATA "0"
+                statusText CDATA #IMPLIED
+                >
+
+<!ELEMENT LLGcExpeditionResult EMPTY>
+<!ATTLIST LLGcExpeditionResult
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LeaveGuildhest EMPTY>
+<!ATTLIST LeaveGuildhest
+    SayGoodbye (True|False|true|false) "False"
+    RandomWait (True|False|true|false) "False"
+    VoteMVP (True|False|true|false) "False"
+    NpcId CDATA "0"
+    NPCID CDATA "0"
+    NpcID CDATA "0"
+    MinWait CDATA "45000"
+    MaxWait CDATA "90000"
+    SayGoodbyeCustom (True|False|true|false) "False"
+    SayGoodbyeMessages CDATA "gg/bye"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLTurnIn EMPTY>
+<!ATTLIST LLTurnIn
+    RewardSlot CDATA "-1"
+    ItemIds CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    RequiresHq CDATA #IMPLIED
+    DialogOption CDATA "System.Int32[]"
+    Emote CDATA ""
+    NpcId CDATA #IMPLIED
+    InteractDistance CDATA "5"
+    XYZ CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT LLSellItem EMPTY>
+<!ATTLIST LLSellItem
+    Armory (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLDesynth EMPTY>
+<!ATTLIST LLDesynth
+    ItemIds CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT EquipAnima EMPTY>
+<!ATTLIST EquipAnima
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT RemoveMateria EMPTY>
+<!ATTLIST RemoveMateria
+    EquipmentId CDATA #IMPLIED
+    EquipmentID CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT PassOnLoot EMPTY>
+<!ATTLIST PassOnLoot
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LoadPandaProfile EMPTY>
+<!ATTLIST LoadPandaProfile
+    ProfileName CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    QueueType CDATA "0"
+    GoToBarracks (True|False|true|false) "False"
+    EquipGear (True|False|true|false) "False"
+    SayHello (True|False|true|false) "False"
+    SayHelloCustom (True|False|true|false) "False"
+    SayHelloMessages CDATA "hi/hiya"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLTalkTo EMPTY>
+<!ATTLIST LLTalkTo
+    DialogOption CDATA "System.Int32[]"
+    NpcId CDATA #IMPLIED
+    InteractDistance CDATA "5"
+    BypassTargetChange (True|False|true|false) "False"
+    SSO CDATA "0"
+    SelectStringOverride CDATA "0"
+    XYZ CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT LLReduce EMPTY>
+<!ATTLIST LLReduce
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLChangeZone EMPTY>
+<!ATTLIST LLChangeZone
+    Heading CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLDiscardItem EMPTY>
+<!ATTLIST LLDiscardItem
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+    ItemIDs CDATA #IMPLIED
+    ItemID CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    ItemIds CDATA #IMPLIED
+>
+
+<!ELEMENT CodeChunks (CodeChunk*)>
+
+
+<!ELEMENT InviteToParty EMPTY>
+<!ATTLIST InviteToParty
+    Names CDATA #IMPLIED
+    names CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    name CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLTurnInGuildLeve EMPTY>
+<!ATTLIST LLTurnInGuildLeve
+    AcceptTransport (True|False|true|false) "True"
+    CollectRewardText CDATA "Collect Reward."
+    HqOnly (True|False|true|false) #IMPLIED
+    MultipleQuests (True|False|true|false) #IMPLIED
+    NqOnly (True|False|true|false) #IMPLIED
+    Timeout CDATA "60"
+    YesText CDATA "Yes."
+    XYZ CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLQualityLower EMPTY>
+<!ATTLIST LLQualityLower
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLGoHome EMPTY>
+<!ATTLIST LLGoHome
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LeaveParty EMPTY>
+<!ATTLIST LeaveParty
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT GCRankUp EMPTY>
+<!ATTLIST GCRankUp
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT RetainerJobs EMPTY>
+<!ATTLIST RetainerJobs
+    Job CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT PickupBattleLeve EMPTY>
+<!ATTLIST PickupBattleLeve
+    LeveIds CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    NpcID CDATA #IMPLIED
+    NPCID CDATA #IMPLIED
+    Timeout CDATA "30"
+    XYZ CDATA #IMPLIED
+    ZoneId CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLSmallTalk EMPTY>
+<!ATTLIST LLSmallTalk
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLGoToHousing EMPTY>
+<!ATTLIST LLGoToHousing
+    District CDATA "Mists"
+    district CDATA "Mists"
+    Ward CDATA "0"
+    ward CDATA "0"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+
+<!ELEMENT GatheringSkill EMPTY>
+<!ATTLIST GatheringSkill
+    TimesToCast CDATA "1"
+    SpellName CDATA ""
+    SpellId CDATA #IMPLIED
+>
+
+<!ELEMENT LLGather EMPTY>
+<!ATTLIST LLGather
+    while CDATA #IMPLIED
+    InteractDistance CDATA "3"
+    Loops CDATA "-1"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLExtendedDuty EMPTY>
+<!ATTLIST LLExtendedDuty
+    XYZ CDATA #IMPLIED
+    InteractDistance CDATA "3"
+    InteractNpcId CDATA #IMPLIED
+    IgnoreNpcIds CDATA #IMPLIED
+    GuardianNPCId CDATA #IMPLIED
+    LeashDistance CDATA "20"
+    SearchDistance CDATA "30"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT JoinSupportDuty EMPTY>
+<!ATTLIST JoinSupportDuty
+    DutyId CDATA #IMPLIED
+    Trial (True|False|true|false) "False"
+    Raid (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT CloseHowTos EMPTY>
+<!ATTLIST CloseHowTos
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT AutoInventoryEquip EMPTY>
+<!ATTLIST AutoInventoryEquip
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT SetBluActive EMPTY>
+<!ATTLIST SetBluActive
+    Spells CDATA #IMPLIED
+    Clear (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT PickupGuildLeve EMPTY>
+<!ATTLIST PickupGuildLeve
+    LeveIds CDATA #IMPLIED
+    leveIds CDATA #IMPLIED
+    LeveType CDATA #IMPLIED
+    leveType CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    NpcID CDATA #IMPLIED
+    NpcID CDATA #IMPLIED
+    npcId CDATA #IMPLIED
+    Timeout CDATA "30"
+    XYZ CDATA #IMPLIED
+    npcLocation CDATA #IMPLIED
+    ZoneId CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLOpenChest EMPTY>
+<!ATTLIST LLOpenChest
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLClimbHill EMPTY>
+<!ATTLIST LLClimbHill
+    Start CDATA #IMPLIED
+    End CDATA #IMPLIED
+    Distance CDATA "1"
+    SpamJump (True|False|true|false) "False"
+    ForceDismount (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT EquipOtherWeapon EMPTY>
+<!ATTLIST EquipOtherWeapon
+    UpdateGearSet (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT EnterSoloDuty EMPTY>
+<!ATTLIST EnterSoloDuty
+    NpcId CDATA #IMPLIED
+    NpcID CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT BuyShopExchangeItem EMPTY>
+<!ATTLIST BuyShopExchangeItem
+    NpcId CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    SelectString CDATA #IMPLIED
+    Count CDATA "1"
+    count CDATA "1"
+    Dialog (True|False|true|false) "False"
+    dialog (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT BuyBluTotem EMPTY>
+<!ATTLIST BuyBluTotem
+    NpcId CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    SelectString CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT AffixMateria EMPTY>
+<!ATTLIST AffixMateria
+    EquipmentId CDATA #IMPLIED
+    EquipmentID CDATA #IMPLIED
+    MateriaId CDATA #IMPLIED
+    MateriaID CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT RandomMoveTo EMPTY>
+<!ATTLIST RandomMoveTo
+    XYZ1 CDATA #IMPLIED
+    XYZ2 CDATA #IMPLIED
+    XYZ3 CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    Distance CDATA "3"
+    usemesh (True|False|true|false) "True"
+    useMesh (True|False|true|false) "True"
+    UseMesh (True|False|true|false) "True"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT NameChocobo EMPTY>
+<!ATTLIST NameChocobo
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLHandOver EMPTY>
+<!ATTLIST LLHandOver
+    ItemIds CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    DialogOption CDATA "0"
+    RequiresHq CDATA #IMPLIED
+    Amount CDATA #IMPLIED
+    InteractDistance CDATA "5"
+    XYZ CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT LLFCDepositItem EMPTY>
+<!ATTLIST LLFCDepositItem
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLLeaveDuty EMPTY>
+<!ATTLIST LLLeaveDuty
+    SayGoodbye (True|False|true|false) "False"
+    RandomWait (True|False|true|false) "False"
+    PassOnLoot (True|False|true|false) "False"
+    VoteMVP (True|False|true|false) "False"
+    MinWait CDATA "45000"
+    MaxWait CDATA "90000"
+    SayGoodbyeCustom (True|False|true|false) "False"
+    SayGoodbyeMessages CDATA "gg/bye"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT BuyShopExchangeCurrency EMPTY>
+<!ATTLIST BuyShopExchangeCurrency
+    NpcId CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    SelectString CDATA #IMPLIED
+    Count CDATA "1"
+    Dialog (True|False|true|false) "False"
+    dialog (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT BuyInclusionShopItem EMPTY>
+<!ATTLIST BuyInclusionShopItem
+    ItemId CDATA #IMPLIED
+    Count CDATA "0"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT AWGrowthTrade EMPTY>
+<!ATTLIST AWGrowthTrade
+    ItemToSpend CDATA #IMPLIED
+    Qty CDATA #IMPLIED
+    Overload (True|False|true|false) "True"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLTurnInCollectables EMPTY>
+<!ATTLIST LLTurnInCollectables
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLGoToBarracks EMPTY>
+<!ATTLIST LLGoToBarracks
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LisbethCheck EMPTY>
+<!ATTLIST LisbethCheck
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLInitiateLeve EMPTY>
+<!ATTLIST LLInitiateLeve
+    LeveId CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT GearSetEquipAll EMPTY>
+<!ATTLIST GearSetEquipAll
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT EquipWeapon EMPTY>
+<!ATTLIST EquipWeapon
+    itemIDs CDATA #IMPLIED
+    ItemIDs CDATA #IMPLIED
+    itemID CDATA #IMPLIED
+    ItemID CDATA #IMPLIED
+    UpdateGearSet (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT DungeonCounter EMPTY>
+<!ATTLIST DungeonCounter
+    MaxCount CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LoadAchievements EMPTY>
+<!ATTLIST LoadAchievements
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLFate EMPTY>
+<!ATTLIST LLFate
+    MaxLevel CDATA #IMPLIED
+    MinLevel CDATA #IMPLIED
+    While CDATA #IMPLIED
+    while CDATA #IMPLIED
+    UseFlight (True|False|true|false) "True"
+    useflight (True|False|true|false) "True"
+    FateIDs CDATA "System.Int32[]"
+    FateIds CDATA "System.Int32[]"
+    FateID CDATA "System.Int32[]"
+    FateId CDATA "System.Int32[]"
+    BlacklistID CDATA "System.Int32[]"
+    BlacklistId CDATA "System.Int32[]"
+    BlacklistIDs CDATA "System.Int32[]"
+    BlacklistIds CDATA "System.Int32[]"
+    Timeout CDATA "600"
+    MinProgress CDATA "0"
+    CheckShareFate (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT RetainerItemDump EMPTY>
+<!ATTLIST RetainerItemDump
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LoadDungeonAssist EMPTY>
+<!ATTLIST LoadDungeonAssist
+    Disable (True|False|true|false) "False"
+    disable (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLEmoteNpc EMPTY>
+<!ATTLIST LLEmoteNpc
+    Emote CDATA #IMPLIED
+    DialogOption CDATA "0"
+    Condition CDATA #IMPLIED
+    XYZ CDATA #IMPLIED
+    WaitTime CDATA #IMPLIED
+    UseHealthPercent CDATA "0"
+    LacksAuraId CDATA #IMPLIED
+    BlacklistDuration CDATA "180"
+    UseDistance CDATA "3.24"
+    UseTimes CDATA "0"
+    SearchRadius CDATA "50"
+    Radius CDATA "50"
+    NpcIds CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    IgnoreLOS (True|False|true|false) #IMPLIED
+    BlacklistAfter (True|False|true|false) #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    InCombatOnly (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT EquipZodiac EMPTY>
+<!ATTLIST EquipZodiac
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT ClimbSpiral EMPTY>
+<!ATTLIST ClimbSpiral
+    XYZ CDATA #IMPLIED
+    Heading CDATA #IMPLIED
+    StartHeading CDATA #IMPLIED
+    Radians CDATA "0.15"
+    Radian CDATA "0.15"
+    Clockwise (True|False|true|false) "False"
+    StepNum CDATA "6"
+    Count CDATA "6"
+    StepHeight CDATA "1.435"
+    StepDistance CDATA "3.25"
+    TimeOut CDATA "10000"
+    Timeout CDATA "10000"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT BuyWhiteScriptItem EMPTY>
+<!ATTLIST BuyWhiteScriptItem
+    ItemId CDATA #IMPLIED
+    SelectString CDATA "0"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT BasicTreasureFight EMPTY>
+<!ATTLIST BasicTreasureFight
+    XYZ CDATA #IMPLIED
+    ZoneId CDATA #IMPLIED
+    SubZoneId CDATA "0"
+    UseFlight (True|False|true|false) "True"
+    useflight (True|False|true|false) "True"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT AutoLisbethEquip EMPTY>
+<!ATTLIST AutoLisbethEquip
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT SayHello EMPTY>
+<!ATTLIST SayHello
+    Goodbye (True|False|true|false) "False"
+    goodbye (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT RetainerHire EMPTY>
+<!ATTLIST RetainerHire
+    OnlyLimsa (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LowerCollectables EMPTY>
+<!ATTLIST LowerCollectables
+    Collectability CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLUseItem EMPTY>
+<!ATTLIST LLUseItem
+    ItemId CDATA #IMPLIED
+    DialogOption CDATA "System.Int32[]"
+    Condition CDATA #IMPLIED
+    XYZ CDATA #IMPLIED
+    WaitTime CDATA #IMPLIED
+    UseHealthPercent CDATA "0"
+    LacksAuraId CDATA #IMPLIED
+    BlacklistDuration CDATA "180"
+    UseDistance CDATA "3.24"
+    UseTimes CDATA "0"
+    SearchRadius CDATA "50"
+    Radius CDATA "50"
+    NpcIds CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    IgnoreLOS (True|False|true|false) #IMPLIED
+    BlacklistAfter (True|False|true|false) #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    InCombatOnly (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLToast EMPTY>
+<!ATTLIST LLToast
+    Message CDATA #IMPLIED
+    message CDATA #IMPLIED
+    Duration CDATA "25000"
+    Duration CDATA "25000"
+    Red CDATA "29"
+    red CDATA "29"
+    Blue CDATA "213"
+    blue CDATA "213"
+    Green CDATA "226"
+    green CDATA "226"
+    Font CDATA "Gautami"
+    font CDATA "Gautami"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLPickUpQuest EMPTY>
+<!ATTLIST LLPickUpQuest
+    DialogOption CDATA "System.Int32[]"
+    InteractDistance CDATA "5"
+    NpcId CDATA #IMPLIED
+    SelectStringSlot CDATA "0"
+    XYZ CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT LLJoinDuty EMPTY>
+<!ATTLIST LLJoinDuty
+    GoToBarracks (True|False|true|false) "False"
+    DutyId CDATA #IMPLIED
+    Trial (True|False|true|false) "False"
+    Raid (True|False|true|false) "False"
+    Guildhest (True|False|true|false) "False"
+    Undersized (True|False|true|false) "True"
+    SayHello (True|False|true|false) "False"
+    SayHelloCustom (True|False|true|false) "False"
+    SayHelloMessages CDATA "gg/bye"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT JoinDuty EMPTY>
+<!ATTLIST JoinDuty
+    GoToBarracks (True|False|true|false) "False"
+    DutyId CDATA #IMPLIED
+    Trial (True|False|true|false) "False"
+    Raid (True|False|true|false) "False"
+    Guildhest (True|False|true|false) "False"
+    Undersized (True|False|true|false) "True"
+    SayHello (True|False|true|false) "False"
+    SayHelloCustom (True|False|true|false) "False"
+    SayHelloMessages CDATA "gg/bye"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLGetTo EMPTY>
+<!ATTLIST LLGetTo
+    XYZ CDATA #IMPLIED
+    ZoneId CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT AnimusBooks EMPTY>
+<!ATTLIST AnimusBooks
+    ItemId CDATA #IMPLIED
+    ItemID CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT PickupAnimaQuest EMPTY>
+<!ATTLIST PickupAnimaQuest
+    QuestId CDATA #IMPLIED
+    QuestID CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    NpcID CDATA #IMPLIED
+    NPCID CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT OpenCoffers EMPTY>
+<!ATTLIST OpenCoffers
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLUseObject EMPTY>
+<!ATTLIST LLUseObject
+    NpcId CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLTravel EMPTY>
+<!ATTLIST LLTravel
+    XYZ CDATA #IMPLIED
+    ZoneId CDATA #IMPLIED
+    Land (True|False|true|false) "True"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLisbeth EMPTY>
+<!ATTLIST LLisbeth
+    Json CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LlamaJump EMPTY>
+<!ATTLIST LlamaJump
+    Start CDATA #IMPLIED
+    End CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT InfuseSphereScroll EMPTY>
+<!ATTLIST InfuseSphereScroll
+    WeaponId CDATA #IMPLIED
+    WeaponID CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT GCExpertTurnin EMPTY>
+<!ATTLIST GCExpertTurnin
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT AnimaBuyShopExchangeItem EMPTY>
+<!ATTLIST AnimaBuyShopExchangeItem
+    NpcId CDATA #IMPLIED
+    ItemId CDATA #IMPLIED
+    SelectString1 CDATA #IMPLIED
+    SelectString2 CDATA #IMPLIED
+    Count CDATA "1"
+    count CDATA "1"
+    Dialog (True|False|true|false) "False"
+    dialog (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT SpearfishWithAutoHook EMPTY>
+<!ATTLIST SpearfishWithAutoHook
+    while CDATA #IMPLIED
+    InteractDistance CDATA "3"
+    Loops CDATA "-1"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT SplendorousOrder EMPTY>
+<!ATTLIST SplendorousOrder
+    ItemToCraft CDATA #IMPLIED
+    Total CDATA #IMPLIED
+    RewardItemId CDATA #IMPLIED
+    Job (None|Purchase|Gather|Grind|Fisher|Carpenter|Blacksmith|Armorer|Goldsmith|Leatherworker|Weaver|Alchemist|Culinarian|Desynthesize|RetainerRefresh|Exchange|Retainer|GatherMasterpiece|CraftMasterpiece|Leve|FishingExpedition|ResourceApproval|Any) #IMPLIED
+    Fish (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT StartFate EMPTY>
+<!ATTLIST StartFate
+    NpcId CDATA #IMPLIED
+    NpcID CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT StatusText EMPTY>
+<!ATTLIST StatusText
+    Message CDATA #IMPLIED
+    message CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT StopBusy EMPTY>
+<!ATTLIST StopBusy
+    LeaveDuty (True|False|true|false) "True"
+    StopFishing (True|False|true|false) "True"
+    Dismount (True|False|true|false) "True"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT TurnInLeve EMPTY>
+<!ATTLIST TurnInLeve
+    XYZ CDATA #IMPLIED
+    NpcLocation CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT TurnInSplendorous EMPTY>
+<!ATTLIST TurnInSplendorous
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT UnlockTTCard EMPTY>
+<!ATTLIST UnlockTTCard
+    CardName CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT UseInventoryItem EMPTY>
+<!ATTLIST UseInventoryItem
+    itemIDs CDATA #IMPLIED
+    ItemIDs CDATA #IMPLIED
+    itemID CDATA #IMPLIED
+    ItemID CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT UseMedicine EMPTY>
+<!ATTLIST UseMedicine
+    ItemId CDATA #IMPLIED
+    MinDuration CDATA "5"
+    HqOnly (True|False|true|false) #IMPLIED
+    NqOnly (True|False|true|false) #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT UseShortcut EMPTY>
+<!ATTLIST UseShortcut
+    NpcId CDATA #IMPLIED
+    NpcID CDATA #IMPLIED
+    Distance CDATA "10"
+    distance CDATA "10"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT UseTransportConvo EMPTY>
+<!ATTLIST UseTransportConvo
+    NpcId CDATA #IMPLIED
+    NpcID CDATA #IMPLIED
+    Distance CDATA "10"
+    distance CDATA "10"
+    Contains CDATA #IMPLIED
+    contains CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT UseUnlockables EMPTY>
+<!ATTLIST UseUnlockables
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT VoteMVP EMPTY>
+<!ATTLIST VoteMVP
+    Names CDATA #IMPLIED
+    names CDATA #IMPLIED
+    Name CDATA #IMPLIED
+    name CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLUseSpell EMPTY>
+<!ATTLIST LLUseSpell
+    SpellId CDATA #IMPLIED
+    NpcIds CDATA #IMPLIED
+    NpcId CDATA #IMPLIED
+    UseDistance CDATA "3.24"
+    XYZ CDATA #IMPLIED
+    Radius CDATA "50"
+    WaitTime CDATA #IMPLIED
+    Condition CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT LLTransport EMPTY>
+<!ATTLIST LLTransport
+    NpcId CDATA #IMPLIED
+    InteractDistance CDATA "5"
+    XYZ CDATA #IMPLIED
+    BlacklistAfter (True|False|true|false) "False"
+    DialogOption CDATA "-1"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT LLStopBot EMPTY>
+<!ATTLIST LLStopBot
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LLCommandMission EMPTY>
+<!ATTLIST LLCommandMission
+    Index CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT LastProfile EMPTY>
+<!ATTLIST LastProfile
+    Path CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT HandleDutyEndedLoot EMPTY>
+<!ATTLIST HandleDutyEndedLoot
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT EquipCurrentGearset EMPTY>
+<!ATTLIST EquipCurrentGearset
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT ChangeClass EMPTY>
+<!ATTLIST ChangeClass
+    Job CDATA #IMPLIED
+    Force (True|False|true|false) "False"
+    force (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT BuyScripItem EMPTY>
+<!ATTLIST BuyScripItem
+    ItemId CDATA #IMPLIED
+    SelectString CDATA #IMPLIED
+    Count CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT BuyGCItem EMPTY>
+<!ATTLIST BuyGCItem
+    ItemId CDATA #IMPLIED
+    Count CDATA "1"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT AutoEquip EMPTY>
+<!ATTLIST AutoEquip
+    UpdateGearSet (True|False|true|false) "False"
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+    statusText CDATA #IMPLIED
+>
+
+<!ELEMENT Snipe EMPTY>
+<!ATTLIST Snipe
+    NpcId CDATA #IMPLIED
+    InteractDistance CDATA "5"
+    XYZ CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT PointMenu EMPTY>
+<!ATTLIST PointMenu
+    NpcId CDATA #IMPLIED
+    InteractDistance CDATA "5"
+    XYZ CDATA #IMPLIED
+    InteractOptions CDATA #IMPLIED
+    inCombat (True|False|true|false) "False"
+    InCombat (True|False|true|false) "False"
+    QuestId CDATA #IMPLIED
+    Step CDATA #IMPLIED
+    StepId CDATA #IMPLIED
+    PostCombatDelay CDATA "0"
+>
+
+<!ELEMENT ProfileStop EMPTY>
+
+        <!ELEMENT Lisbeth EMPTY>
+        <!ATTLIST Lisbeth
+                IgnoreHome (true|false) #IMPLIED
+                Path CDATA #IMPLIED
+                Json CDATA #IMPLIED
+                TrashExclusionItems CDATA #IMPLIED
+                inCombat (true|false) "False"
+                InCombat (true|false) "False"
+                QuestId CDATA #IMPLIED
+                Step CDATA #IMPLIED
+                StepId CDATA #IMPLIED
+                PostCombatDelay CDATA "0"
+                statusText CDATA #IMPLIED
+                >
+
+        <!ELEMENT LisbethTravel EMPTY>
+        <!ATTLIST LisbethTravel
+                Area CDATA #IMPLIED
+                Position CDATA #IMPLIED
+                XYZ CDATA #IMPLIED
+                Zone CDATA #IMPLIED
+                ZoneId CDATA #IMPLIED
+                Subzone CDATA #IMPLIED
+                SkipLanding (true|false) #IMPLIED
+                inCombat (true|false) "False"
+                InCombat (true|false) "False"
+                QuestId CDATA #IMPLIED
+                Step CDATA #IMPLIED
+                StepId CDATA #IMPLIED
+                PostCombatDelay CDATA "0"
+                statusText CDATA #IMPLIED
+                >
+
+        <!ELEMENT LisAutoEquip EMPTY>
+        <!ATTLIST LisAutoEquip
+                inCombat (true|false) "False"
+                InCombat (true|false) "False"
+                QuestId CDATA #IMPLIED
+                Step CDATA #IMPLIED
+                StepId CDATA #IMPLIED
+                PostCombatDelay CDATA "0"
+                statusText CDATA #IMPLIED
+                >
