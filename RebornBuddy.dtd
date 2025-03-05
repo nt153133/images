@@ -2,7 +2,7 @@
 <!ELEMENT BehaviorDirectory (#PCDATA)>
 <!ELEMENT Order ANY>
 
-<!ELEMENT CodeChunk EMPTY>
+<!ELEMENT CodeChunk ANY>
 <!ATTLIST CodeChunk
     Name CDATA #IMPLIED
     Type (Statement|Definition|Hook) "Statement"
