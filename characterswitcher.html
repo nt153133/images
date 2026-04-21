@@ -97,6 +97,7 @@
 
         .features-card {
             border-left: 5px solid var(--brand-purple);
+			padding: 30px 40px;
         }
 
         .tasks-card {
@@ -312,9 +313,12 @@
             <section class="card pricing-card">
                 <div class="stripe-container">
                     
-                    <p style="color: #665280; font-style: italic; text-align: center;">[Stripe Pricing Table Loading...]</p>
+				<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+				<stripe-pricing-table pricing-table-id="prctbl_1TOVFSBwgti2RZj6XebhrULz"
+				publishable-key="pk_live_51LiMcgBwgti2RZj6PjkJx3geXiG1E4yOuDxXWYULU2iAzHMHtCYv4oOA7xCcQu4y1ENf6CdOAac0YQ8SxAWiASLt008Ax41p7S">
+				</stripe-pricing-table>
 
-                    </div>
+				</div>
             </section>
 
         </main>
